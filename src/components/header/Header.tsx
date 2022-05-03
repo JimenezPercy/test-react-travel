@@ -21,8 +21,8 @@ export const Header: React.FC = () => {
     const match = useRouteMatch();
     const {t}=useTranslation();//国际化
 
-    const language = useSelector((state) => state.language);
-    const languageList = useSelector((state) => state.languageList);
+    const language = useSelector((state) => state.language.language);
+    const languageList = useSelector((state) => state.language.languageList);
     const dispatch=useDispatch();
 
     //点击事件

@@ -11,7 +11,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,                    //开启后允许我们使用commonjs的方式import默认文件
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",                         //配置的是代码的模块系统，Node.js的CommonJS、ES6标准的esnext、requirejs

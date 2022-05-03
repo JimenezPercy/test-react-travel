@@ -14,6 +14,7 @@ import {commentMockData} from "./mockup";
 import {getProductDetail} from "../../redux/productDetail/slice";
 import {useSelector} from "../../redux/hooks";
 import {useDispatch} from "react-redux";
+import {MainLayout} from "../../layouts/mainLayout";
 
 const {RangePicker} = DatePicker;
 
@@ -55,8 +56,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = () => {
     }
     return (
         <>
-            <Header/>
-            <div className={styles["page-content"]}>
+            <MainLayout className={styles["page-content"]}>
                 {/* 产品简介 与 日期选择 */}
                 <div className={styles["product-intro-container"]}>
                     <Row>
@@ -133,8 +133,7 @@ export const DetailPage: React.FC<RouteComponentProps<MatchParams>> = () => {
                         <ProductComments data={commentMockData}/>
                     </div>
                 </div>
-            </div>
-            <Footer/>
+            </MainLayout>
         </>
     );
 };

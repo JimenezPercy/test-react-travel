@@ -18,6 +18,7 @@ import axios from "axios";
 import {giveMeDataActionCreator} from "../../redux/recommendProducts/recommendProductsActions";
 import {RootState} from "../../redux/store";
 import {connect} from "react-redux";
+import {MainLayout} from "../../layouts/mainLayout";
 
 const mapStateToProps = (state: RootState) => {
     return {
@@ -72,27 +73,26 @@ class HomePageComponent extends React.Component<PropsType> {
     render() {
         const { t, productList, loading, error } = this.props;
 
-        if(loading){
-            return <Spin
-                size={"large"}
-                style={{
-                    marginTop:200,
-                    marginBottom:200,
-                    marginLeft:"auto",
-                    marginRight:"auto",
-                    width:"100%"
-                }
-                }/>
-        }
-
-        if(error){
-            return <div>网站出错：{error}</div>
-        }
+        // if(loading){
+        //     return <Spin
+        //         size={"large"}
+        //         style={{
+        //             marginTop:200,
+        //             marginBottom:200,
+        //             marginLeft:"auto",
+        //             marginRight:"auto",
+        //             width:"100%"
+        //         }
+        //         }/>
+        // }
+        //
+        // if(error){
+        //     return <div>网站出错：{error}</div>
+        // }
         return (
             <>
-                <Header/>
                 {/* 页面内容 content */}
-                <div className={styles["page-content"]}>
+                <MainLayout className={styles["page-content"]}>
                     <Row style={{marginTop: 20}}>
                         <Col span={6}>
                             <SideMenu/>
@@ -132,8 +132,7 @@ class HomePageComponent extends React.Component<PropsType> {
                         products={productList3}
                     />
                     <BusinessPartners/>
-                </div>
-                <Footer/>
+                </MainLayout>
             </>
         );
     }
